@@ -1,8 +1,15 @@
-span {
+.tempLowForecast {
   color: gray;
 }
 .col-2 {
   padding: 0 0;
+}
+#geolocation {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: smaller;
+    color: gray;
 }
 .currentSearchTimeAndDescrip {
     text-align: left; 
