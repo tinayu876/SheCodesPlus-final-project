@@ -28,5 +28,5 @@ a.hover{
 }
 #CelciusAndFarenheitToggle{
   height: min-content;
-  text-align: right;
+  text-align: left;
 }

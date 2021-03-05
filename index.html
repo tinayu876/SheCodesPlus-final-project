@@ -31,25 +31,34 @@
           </form>
           <div class="card text-center">
             <div class="card-body">
-              <h6 id="CelciusAndFarenheitToggle">
-                <a id="changeToCelcius" href="">C</a>
-                 / 
-                 <a id="changeToFehrenheit" href="">F</a>
-              </h6>
               <h5 id="alertUserOfSearch" class="card-title" style="text-align: left; line-height: 20px; margin-bottom: 15px;"
               >
                 GuangZhou, China
               </h5>
               <h3 class="currentSearchTimeAndDescrip" id="currentTime"> Current Time</h3>
               <h3 class="currentSearchTimeAndDescrip" id="descriptionOfWeather">Description of Weather</h3>
-              <h3 id="currentLocalTemp">
-                10° C
-              </h3>
-              <p class="card-text" style="color: grey;">Current Temperature</p>
-              <i
-                class="fas fa-cloud-showers-heavy"
-                style="font-size: 80px; color: grey; line-height: 120px; margin: 10px 10px;"
-              ></i>
+              <div class="row h-100">
+                <div class="col-2">
+                  <i class="fas fa-cloud-showers-heavy" style="font-size: 30px; color: grey; margin: 10px 10px;"></i>
+                </div>
+                <div class="col-2">
+                  <h3 id="currentLocalTemp">
+                    10
+                  </h3>
+                </div>
+                <div class="col-2">
+                  <h6 id="CelciusAndFarenheitToggle">
+                    <a id="changeToCelcius" href="">°C</a>
+                    / 
+                    <a id="changeToFehrenheit" href="">°F</a>
+                  </h6>
+                </div>
+                <div class="col-6">
+                  Humidity: <span>Current Humidity</span>
+                  <br>
+                  Wind: <span>Current Wind Speed</span> 
+                </div>
+              </div>
               <div class="card">
                 <div class="card-body">
                   <div class="row">
