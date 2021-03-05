@@ -1,0 +1,28 @@
+span {
+  color: gray;
+}
+.col-2 {
+  padding: 0 0;
+}
+form {
+  margin-bottom: 0.5em;
+}
+.sideBarlayout {
+  text-align: center;
+}
+.rightPanelAlign {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a.hover{
+  color: blue;
+}
+#CelciusAndFarenheitToggle{
+  height: min-content;
+  text-align: right;
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/11678fe011.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather | GuangZhou, China</title>
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" style="margin: 20px auto;">
+        <div class="col-md-8 ftco-animate fadeInUp ftco-animated">
+          <form action="#" class="domain-form">
+            <div class="input-group">
+              <input id="newSearch" type="search" class="form-control rounded" placeholder="Search for location" aria-label="Search" aria-describedby="search-addon"
+              />
+              <button id="newSearchButton" type="button" class="btn btn-primary">Search</button>
+            </div>
+          </form>
+          <div class="card text-center">
+            <div class="card-body">
+              <button id="geolocation">Current Location</button>
+              <h6 id="CelciusAndFarenheitToggle">
+                <a id="changeToCelcius" href="">C</a>
+                 / 
+                 <a id="changeToFehrenheit" href="">F</a>
+              </h6>
+              <h5 id="alertUserOfSearch" class="card-title" style="text-align: left; line-height: 50px; margin-bottom: 30px;"
+              >
+                GuangZhou, China
+              </h5>
+              <h3 id="currentTime" style="text-align: left; font-size: smaller;"> Current Time</h3>
+              <h3 id="currentLocalTemp">
+                10° C
+              </h3>
+              <p class="card-text" style="color: grey;">Current Temperature</p>
+              <i
+                class="fas fa-cloud-showers-heavy"
+                style="font-size: 80px; color: grey; line-height: 120px; margin: 10px 10px;"
+              ></i>
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-2">
+                      <h5>Sat</h5>
+                    </div>
+                    <div class="col-2">
+                      <h5>Sun</h5>
+                    </div>
+                    <div class="col-2">
+                      <h5>Mon</h5>
+                    </div>
+                    <div class="col-2">
+                      <h5>Tues</h5>
+                    </div>
+                    <div class="col-2">
+                      <h5>Wed</h5>
+                    </div>
+                    <div class="col-2">
+                      <h5>Thurs</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <h6>02/06</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>02/07</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>02/08</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>02/09</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>02/10</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>02/11</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <i
+                        class="fas fa-cloud"
+                        style="font-size: 30px; color: grey; line-height: 40px"
+                      ></i>
+                    </div>
+                    <div class="col-2">
+                      <i
+                        class="fas fa-cloud-showers-heavy"
+                        style="font-size: 40px; color: grey"
+                      ></i>
+                    </div>
+                    <div class="col-2">
+                      <i
+                        class="fas fa-cloud-showers-heavy"
+                        style="font-size: 40px; color: grey"
+                      ></i>
+                    </div>
+                    <div class="col-2">
+                      <i
+                        class="fas fa-cloud-sun"
+                        style="font-size: 40px; color: grey"
+                      ></i>
+                    </div>
+                    <div class="col-2">
+                      <i
+                        class="fas fa-sun"
+                        style="font-size: 40px; color: rgb(255, 230, 0)"
+                      ></i>
+                    </div>
+                    <div class="col-2">
+                      <i
+                        class="fas fa-sun"
+                        style="font-size: 40px; color: rgb(255, 230, 0)"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <p>
+                        <div>
+                          10°C /
+                          <span>
+                            -1°C
+                          </span>
+                        </div>
+                      </p>
+                    </div>
+                    <div class="col-2">
+                      <p>
+                        <div>
+                          10°C /
+                          <span>
+                            -1°C
+                          </span>
+                        </div>
+                      </p>
+                    </div>
+                    <div class="col-2">
+                      <p>
+                        <div>
+                          10°C /
+                          <span>
+                            -1°C
+                          </span>
+                        </div>
+                      </p>
+                    </div>
+                    <div class="col-2">
+                      <p>
+                        <div>
+                          10°C /
+                          <span>
+                            -1°C
+                          </span>
+                        </div>
+                      </p>
+                    </div>
+                    <div class="col-2">
+                      <p>
+                        <div>
+                          10°C /
+                          <span>
+                            -1°C
+                          </span>
+                        </div>
+                      </p>
+                    </div>
+                    <div class="col-2">
+                      <p>
+                        <div>
+                          10°C /
+                          <span>
+                            -1°C
+                          </span>
+                        </div>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row h-100">
+            <h5 style="text-align: left; margin-top: 5px;">
+              Previous Searches
+            </h5>
+            <div class="col-md-12 h-50">
+              <div class="card h-100" style="border: transparent;">
+                <h5 style="text-align: center; font-size: larger; font-weight: bolder; margin-top: 20%;">
+                  Paris, France
+                </h5>
+                <br>
+                <h6 style="text-align: center;">
+                  10°C
+                </h6>
+                <br>
+                <h5 style="text-align: center;">
+                  <i class="fas fa-sun" style="font-size: 40px; color: rgb(255, 230, 0)">
+                  </i>                        
+                </h5>
+              </div>
+            </div>
+            <div class="col-md-12 h-50">
+              <div class="card h-100" style="align-content: center; border: transparent;">
+                <h5 style="text-align: center; font-size: larger; font-weight: bolder; margin-top: 8%;">
+                  Incheon, South Korea
+                </h5>
+                <br>
+                <h6 style="text-align: center;">
+                  10°C
+                </h6>
+                <br>
+                <h5 style="text-align: center;">
+                   <i class="fas fa-sun" style="font-size: 40px; color: rgb(255, 230, 0)">
+                   </i>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
