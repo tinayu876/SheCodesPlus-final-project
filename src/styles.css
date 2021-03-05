@@ -4,6 +4,10 @@ span {
 .col-2 {
   padding: 0 0;
 }
+.currentSearchTimeAndDescrip {
+    text-align: left; 
+    font-size: smaller;
+}
 form {
   margin-bottom: 0.5em;
 }
