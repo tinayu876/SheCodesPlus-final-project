@@ -36,29 +36,38 @@
                 GuangZhou, China
               </h5>
               <h3 class="currentSearchTimeAndDescrip" id="currentTime"> Current Time</h3>
-              <h3 class="currentSearchTimeAndDescrip" id="descriptionOfWeather">Description of Weather</h3>
+              <h3 class="currentSearchTimeAndDescrip" id="descriptionOfWeather" style="padding-bottom: 15px;">Description of Weather</h3>
               <div class="row h-100">
-                <div class="col-2">
-                  <i class="fas fa-cloud-showers-heavy" style="font-size: 30px; color: grey; margin: 10px 10px;"></i>
+                <div class="col-3" id="currentWeatherIcon">
+                  <i class="fas fa-cloud-showers-heavy"></i>
                 </div>
-                <div class="col-2">
-                  <h3 id="currentLocalTemp">
-                    10
-                  </h3>
+                <div class="col-4" style="padding-left: 0px;">
+                  <div class="row h-100">
+                    <div class="col-8" style="margin: auto; padding-right: 0%;">
+                      <h3 id="currentLocalTemp" style="margin: auto;">
+                        10
+                      </h3>
+                    </div>
+                    <div class="col-4" style="padding-left: 0;">
+                      <h6 id="CelciusAndFarenheitToggle">
+                        <a id="changeToCelcius" href="">°C</a>
+                         / 
+                        <a id="changeToFehrenheit" href="">°F</a>
+                      </h6>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-2">
-                  <h6 id="CelciusAndFarenheitToggle">
-                    <a id="changeToCelcius" href="">°C</a>
-                    / 
-                    <a id="changeToFehrenheit" href="">°F</a>
-                  </h6>
+                <div class="col-1">
                 </div>
-                <div class="col-6">
-                  Humidity: <span>Current Humidity</span>
+                <div class="col-4" id="currentHumidityWindPrec">
+                  Humidity: <span>%</span>
                   <br>
-                  Wind: <span>Current Wind Speed</span> 
+                  Wind: <span>km/hr</span> 
+                  <br>
+                  Precipitation: <span>%</span>
                 </div>
               </div>
+              <br style="line-height: 10px;">
               <div class="card">
                 <div class="card-body">
                   <div class="row">
