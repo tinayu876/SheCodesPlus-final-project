@@ -57,3 +57,6 @@ a.hover{
   text-align: left;
   margin-top: 8px;
 }
+#descriptionOfWeather{
+  text-transform: capitalize;
+}

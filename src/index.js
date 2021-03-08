@@ -1,3 +1,10 @@
+//update weather description when new search entered
+function replaceWeatherDescription (response) {
+    let newWeatherDesc = response.data.weather[0].description
+    let updateWeatherDescrip = document.querySelector("#descriptionOfWeather");
+    updateWeatherDescrip.innerHTML=`${newWeatherDesc}`
+}
+
 //Applies new city name to page when user searches that city. 
 function presentChange(response){
     let name = (response.data.name);
@@ -6,6 +13,7 @@ function presentChange(response){
     updateCurrentTemp.innerHTML = `${temp}`;
     let updateSearchLocation = document.querySelector("#alertUserOfSearch");
     updateSearchLocation.innerHTML = `${name}`;
+    replaceWeatherDescription(response);
 }
 
 function newSearch(event) {
@@ -13,7 +21,7 @@ function newSearch(event) {
   let input = document.querySelector("#newSearch");
   let newLocation = (input.value);
   let apiKey = "3188f707d8d8b76ee51ef636790f1649";
-  let apiURL = `http://api.openweathermap.org/data/2.5/weather?q=${newLocation}&appid=${apiKey}&units=metric`
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${newLocation}&appid=${apiKey}&units=metric`
   axios.get(apiURL).then(presentChange);
 }
 
@@ -24,7 +32,7 @@ searchLocationButton.addEventListener("click", newSearch);
 function handlePosition(position) {
   let latitude = (position.coords.latitude);
   let longitude = (position.coords.longitude);
-  let apiURLByGeolocation = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&cnt=1&appid=3188f707d8d8b76ee51ef636790f1649&units=metric`
+  let apiURLByGeolocation = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&cnt=1&appid=3188f707d8d8b76ee51ef636790f1649&units=metric`
   axios.get(apiURLByGeolocation).then(presentChange);
 }
 
@@ -35,3 +43,4 @@ function searchByGeolocation(event){
 
 let geolocationButton = document.querySelector("#geolocation");
 geolocationButton.addEventListener("click", searchByGeolocation)
+
