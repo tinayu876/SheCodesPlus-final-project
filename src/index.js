@@ -95,3 +95,10 @@ function converToCelcius (event){
 
 let displayTempCelcius = document.querySelector("#changeToCelcius");
 displayTempCelcius.addEventListener("click", converToCelcius);
+
+function initialDisplay(){
+  let initialApiURL = `https://api.openweathermap.org/data/2.5/weather?q=GuangZhou&appid=3188f707d8d8b76ee51ef636790f1649&units=metric`
+  axios.get(initialApiURL).then(presentChange);
+}
+
+initialDisplay();
