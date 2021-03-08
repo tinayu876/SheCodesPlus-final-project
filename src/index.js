@@ -21,7 +21,7 @@ function replaceTemp (response){
 function replaceCurrentWeatherIcon(response){
     let currentIcon = (response.data.weather[0].icon);
     let updateWeatherIcon = document.querySelector("#currentWeatherIcon");
-    updateWeatherIcon.setAttribute ("src",`http://openweathermap.org/img/wn/${currentIcon}@2x.png`);
+    updateWeatherIcon.setAttribute ("src",`https://openweathermap.org/img/wn/${currentIcon}@2x.png`);
 }
 
 function replaceWind (response){
