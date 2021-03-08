@@ -13,7 +13,7 @@ function replaceSearchLocation(response){
 }
 
 function replaceTemp (response){
-    let temp = Math.round(response.data.main.temp);
+    temp = Math.round(response.data.main.temp);
     let updateCurrentTemp = document.querySelector("#currentLocalTemp");
     updateCurrentTemp.innerHTML = `${temp}`;
 }
@@ -43,7 +43,7 @@ function presentChange(response){
     replaceCurrentWeatherIcon(response);
     replaceHumidity(response);
     replaceWind (response);
-    tempInCelcius = response.data.main.temp;
+    tempInCelcius = Math.round(response.data.main.temp);
 }
 
 function newSearch(event) {
@@ -77,11 +77,21 @@ geolocationButton.addEventListener("click", searchByGeolocation)
 function convertToFahrenheit(event){
     event.preventDefault();
     let tempInFahrenheit = Math.round((tempInCelcius*(9/5))+35);
-    console.log(tempInFahrenheit);
-    let currentTempDisplayed = document.querySelector("#currentLocalTemp");
     currentTempDisplayed.innerHTML = (`${tempInFahrenheit}`);
 }
 
+let currentTempDisplayed = document.querySelector("#currentLocalTemp");
+
 let tempInCelcius = null;
+let temp = null;
 let displayTempFahrenheit = document.querySelector("#changeToFehrenheit");
 displayTempFahrenheit.addEventListener("click", convertToFahrenheit);
+
+
+function converToCelcius (event){
+    event.preventDefault();
+    currentTempDisplayed.innerHTML = (`${tempInCelcius}`)
+}
+
+let displayTempCelcius = document.querySelector("#changeToCelcius");
+displayTempCelcius.addEventListener("click", converToCelcius);
