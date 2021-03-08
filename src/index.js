@@ -12,12 +12,16 @@ function replaceSearchLocation(response){
     updateSearchLocation.innerHTML = `${name}`;
 }
 
-function presentChange(response){
+function replaceTemp (response){
     let temp = Math.round(response.data.main.temp);
     let updateCurrentTemp = document.querySelector("#currentLocalTemp");
     updateCurrentTemp.innerHTML = `${temp}`;
+}
+
+function presentChange(response){
     replaceSearchLocation (response);
     replaceWeatherDescription(response);
+    replaceTemp(response);
 }
 
 function newSearch(event) {
