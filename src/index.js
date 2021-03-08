@@ -36,6 +36,14 @@ function replaceHumidity(response){
     updateHumidity.innerHTML= `${humidity}%`;
 }
 
+function timeOfSearch (){
+    let now = new Date();
+    let currentHour = now.getHours();
+    let currentMinute = ('0' + now.getMinutes()).slice(-2);
+    let updateSearchTime = document.querySelector("#SearchTime");
+    updateSearchTime.innerHTML = (`${currentHour}:${currentMinute}`);
+}
+
 function presentChange(response){
     replaceSearchLocation (response);
     replaceWeatherDescription(response);
@@ -43,6 +51,7 @@ function presentChange(response){
     replaceCurrentWeatherIcon(response);
     replaceHumidity(response);
     replaceWind (response);
+    timeOfSearch();
     tempInCelcius = Math.round(response.data.main.temp);
 }
 
