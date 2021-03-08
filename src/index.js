@@ -24,11 +24,25 @@ function replaceCurrentWeatherIcon(response){
     updateWeatherIcon.setAttribute ("src",`http://openweathermap.org/img/wn/${currentIcon}@2x.png`);
 }
 
+function replaceWind (response){
+    let wind = (response.data.wind.speed);
+    let updateWind = document.querySelector("#displayWind");
+    updateWind.innerHTML = `${wind} m/s`;
+}
+
+function replaceHumidity(response){
+    let humidity = (response.data.main.humidity);
+    let updateHumidity = document.querySelector("#displayHumidity");
+    updateHumidity.innerHTML= `${humidity}%`;
+}
+
 function presentChange(response){
     replaceSearchLocation (response);
     replaceWeatherDescription(response);
     replaceTemp(response);
     replaceCurrentWeatherIcon(response);
+    replaceHumidity(response);
+    replaceWind (response);
 }
 
 function newSearch(event) {
