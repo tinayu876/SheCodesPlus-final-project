@@ -18,10 +18,17 @@ function replaceTemp (response){
     updateCurrentTemp.innerHTML = `${temp}`;
 }
 
+function replaceCurrentWeatherIcon(response){
+    let currentIcon = (response.data.weather[0].icon);
+    let updateWeatherIcon = document.querySelector("#currentWeatherIcon");
+    updateWeatherIcon.setAttribute ("src",`http://openweathermap.org/img/wn/${currentIcon}@2x.png`);
+}
+
 function presentChange(response){
     replaceSearchLocation (response);
     replaceWeatherDescription(response);
     replaceTemp(response);
+    replaceCurrentWeatherIcon(response);
 }
 
 function newSearch(event) {
