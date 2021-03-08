@@ -43,6 +43,7 @@ function presentChange(response){
     replaceCurrentWeatherIcon(response);
     replaceHumidity(response);
     replaceWind (response);
+    tempInCelcius = response.data.main.temp;
 }
 
 function newSearch(event) {
@@ -73,3 +74,14 @@ function searchByGeolocation(event){
 let geolocationButton = document.querySelector("#geolocation");
 geolocationButton.addEventListener("click", searchByGeolocation)
 
+function convertToFahrenheit(event){
+    event.preventDefault();
+    let tempInFahrenheit = Math.round((tempInCelcius*(9/5))+35);
+    console.log(tempInFahrenheit);
+    let currentTempDisplayed = document.querySelector("#currentLocalTemp");
+    currentTempDisplayed.innerHTML = (`${tempInFahrenheit}`);
+}
+
+let tempInCelcius = null;
+let displayTempFahrenheit = document.querySelector("#changeToFehrenheit");
+displayTempFahrenheit.addEventListener("click", convertToFahrenheit);
