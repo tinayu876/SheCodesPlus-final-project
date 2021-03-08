@@ -6,13 +6,17 @@ function replaceWeatherDescription (response) {
 }
 
 //Applies new city name to page when user searches that city. 
-function presentChange(response){
+function replaceSearchLocation(response){
     let name = (response.data.name);
+    let updateSearchLocation = document.querySelector("#alertUserOfSearch");
+    updateSearchLocation.innerHTML = `${name}`;
+}
+
+function presentChange(response){
     let temp = Math.round(response.data.main.temp);
     let updateCurrentTemp = document.querySelector("#currentLocalTemp");
     updateCurrentTemp.innerHTML = `${temp}`;
-    let updateSearchLocation = document.querySelector("#alertUserOfSearch");
-    updateSearchLocation.innerHTML = `${name}`;
+    replaceSearchLocation (response);
     replaceWeatherDescription(response);
 }
 
